@@ -24,6 +24,11 @@ http://127.0.0.1:8000/
 - Cargar datos (clientes, proveedores, baldosas)
 - Buscar información (clientes, baldosas)
 
+
+## Prueba Clientes
+1. Ir a la opción "Añadir un cliente" --> Ingresar los datos del cliente --> Por ejemplo: Maximiliano maxi@gmail.com
+2. Ir a la opción "Buscar Cliente" --> Buscar por el nombre del cliente --> Por ejemplo: Maximiliano
+
 ## Tecnologías usadas
 
 - Python
