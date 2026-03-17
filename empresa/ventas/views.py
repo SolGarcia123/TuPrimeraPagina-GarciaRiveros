@@ -42,4 +42,7 @@ def buscar_baldosa(request):
     modelo = request.GET.get("modelo")
     baldosas = Baldosa.objects.filter(modelo__icontains=modelo) if modelo else []
 
-    return render(request, "buscar_baldosa.html", {"baldosas": baldosas})
+    return render(request, "buscar_baldosa.html", {
+        "baldosas": baldosas,
+        "modelo": modelo
+    })

@@ -5,13 +5,18 @@
 <h2>Buscar Baldosa</h2>
 
 <form method="GET">
-    <input type="text" name="modelo" placeholder="Buscar por modelo">
+    <input type="text" name="modelo" placeholder="Buscar por modelo" value="{{ modelo }}">
     <button type="submit">Buscar</button>
 </form>
 
 <ul>
     {% for b in baldosas %}
-        <li>{{ b.modelo }} - {{ b.color }} - ${{ b.precio }}</li>
+        <li>
+            {{ b.modelo }} - {{ b.color }} - ${{ b.precio }}<br>
+            <strong>Proveedor:</strong> {{ b.proveedor.nombre }} - {{ b.proveedor.telefono }}
+        </li>
+    {% empty %}
+        <li>No se encontraron baldosas.</li>
     {% endfor %}
 </ul>
 
