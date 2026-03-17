@@ -17,13 +17,30 @@ Este proyecto es una página web desarrollada en Django que permite gestionar pr
 
 ## Pasos para acceder a la página web
 
-1. Ir a la página principal:
-http://127.0.0.1:8000/
+1. Clonar el repositorio
+git clone https://github.com/SolGarcia123/TuPrimeraPagina-GarciaRiveros.git
+cd TuPrimeraPagina-GarciaRiveros/empresa
 
-2. Usar el menú superior para:
+2. Crear un entorno virtual y activarlo
+python -m venv env
+source env/Scripts/activate
+
+3. Ejecutar el install del archivo requirements.txt
+pip install -r requirements.txt
+
+4. Aplicar migraciones
+python manage.py makemigrations
+python manage.py migrate
+
+5. Ejecutar el servidor
+python manage.py runserver
+
+6. Abrir pagina en el navegador
+http://127.0.0.1:8000
+
+7. Usar el menú superior para probar las funcionalidades:
 - Cargar datos (clientes, proveedores, baldosas)
 - Buscar información (clientes, baldosas)
-
 
 ## Prueba Clientes
 1. Ir a la opción "Cliente" --> Ingresar los datos del cliente --> Por ejemplo: Maximiliano maxi@gmail.com
