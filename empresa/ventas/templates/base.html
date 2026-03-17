@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ROMBO PISOS</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-image: url("{% static 'ventas/img/fondo.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Barra superior */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+        }
+
+        /* Logo */
+        .logo img {
+            height: 50px;
+        }
+
+        /* Menú */
+        .menu a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #4b0082;
+            font-weight: bold;
+        }
+
+        /* Caja de contenido */
+        .contenido {
+            margin: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            width: 30%;
+}
+        button {
+            background-color: #4da6ff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        h3 {
+            color: #800080;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <img src="{% static 'ventas/img/logo.jpg' %}" alt="Rombo Pisos">
+        </div>
+
+        <div class="menu">
+            <a href="/">Inicio</a>
+            <a href="/crear-proveedor/">Proveedor</a>
+            <a href="/crear-cliente/">Cliente</a>
+            <a href="/crear-baldosa/">Baldosa</a>
+            <a href="/buscar-cliente/">Buscar Cliente</a>
+            <a href="/buscar-baldosa/">Buscar Baldosa</a>
+        </div>
+    </div>
+
+    <div class="contenido">
+        {% block contenido %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>

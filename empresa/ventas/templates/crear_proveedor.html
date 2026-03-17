@@ -1,7 +1,13 @@
-<h2>Crear Proveedor</h2> 
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<h2>Añadir Proveedor</h2>
+
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Guardar</button>
 </form>
-<a href="/">Volver al inicio</a>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<h2>Buscar Baldosa</h2>
+
+<form method="GET">
+    <input type="text" name="modelo" placeholder="Buscar por modelo">
+    <button type="submit">Buscar</button>
+</form>
+
+<ul>
+    {% for b in baldosas %}
+        <li>{{ b.modelo }} - {{ b.color }} - ${{ b.precio }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,7 +1,54 @@
-<h1>Bienvenida a mi empresa</h1>
-<ul>
-    <li><a href="/crear-proveedor/">Crear Proveedor</a></li>
-    <li><a href="/crear-cliente/">Crear Cliente</a></li>
-    <li><a href="/crear-baldosa/">Crear Baldosa</a></li>
-    <li><a href="/buscar/">Buscar Cliente</a></li>
-</ul>
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<div style="display: flex; flex-direction: column; height: 100%; min-height: 350px;">
+
+    <!-- TEXTO ARRIBA -->
+    <div style="text-align: center;">
+        <h1>BIENVENIDOS A ROMBO PISOS</h1>
+
+        <h3 style="color: #800080; font-style: italic;">
+            "....Donde la creatividad y la calidad se unen..."
+        </h3>
+
+        <h4 style="color: hsla(358, 82%, 61%, 0.915);">
+            Amplia variedad de pisos para interior y exterior.
+        </h4>
+    </div>
+
+    <!-- EMPUJA HACIA ABAJO -->
+    <div style="flex-grow: 1;"></div>
+
+    <!-- RECUADROS ABAJO DERECHA -->
+    <div style="text-align: center;display: flex; gap: 20px;">
+
+        <div style="
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            border-left: 5px solid hsla(358, 82%, 61%, 0.915);
+        ">
+            📍 <strong>DIRECCIÓN</strong><br>
+            Calle Carhué Nro. 123<br>
+            Barrio Liniers, CABA
+        </div>
+
+        <div style="
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            border-left: 5px solid hsla(358, 82%, 61%, 0.915);
+        ">
+            📞 <strong>CONTACTO</strong><br>
+            Presupuestos sin cargo<br>
+            011 2397-5678 | 4655-8693
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

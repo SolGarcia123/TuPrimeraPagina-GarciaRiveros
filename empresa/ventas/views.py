@@ -32,6 +32,14 @@ def crear_baldosa(request):
 
 # Formulario para buscar clientes
 def buscar_cliente(request):
-    query = request.GET.get('q')
-    resultados = Cliente.objects.filter(nombre__icontains=query) if query else []
-    return render(request, 'buscar_cliente.html', {'resultados': resultados})
+    nombre = request.GET.get("nombre")
+    clientes = Cliente.objects.filter(nombre__icontains=nombre) if nombre else []
+
+    return render(request, "buscar_cliente.html", {"clientes": clientes})
+
+# Formulario para buscar baldosa
+def buscar_baldosa(request):
+    modelo = request.GET.get("modelo")
+    baldosas = Baldosa.objects.filter(modelo__icontains=modelo) if modelo else []
+
+    return render(request, "buscar_baldosa.html", {"baldosas": baldosas})
