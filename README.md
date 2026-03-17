@@ -26,8 +26,13 @@ http://127.0.0.1:8000/
 
 
 ## Prueba Clientes
-1. Ir a la opción "Añadir un cliente" --> Ingresar los datos del cliente --> Por ejemplo: Maximiliano maxi@gmail.com
+1. Ir a la opción "Cliente" --> Ingresar los datos del cliente --> Por ejemplo: Maximiliano maxi@gmail.com
 2. Ir a la opción "Buscar Cliente" --> Buscar por el nombre del cliente --> Por ejemplo: Maximiliano
+
+## Prueba Baldosas
+1. Ir a la opción "Baldosa" --> Ingresar los datos del nuevo modelo de baldosa --> Por ejemplo: #001 Negro 1200
+2. Ir a la opción "Buscar Baldosa" --> Buscar por el codigo de la baldosa --> Por ejemplo: #001
+
 
 ## Tecnologías usadas
 
