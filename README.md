@@ -1,5 +1,5 @@
 # TuPrimeraPagina-GarciaRiveros
-# Rombo Pisos
+Rombo Pisos
 
 ## Sobre la empresa
 La Empresa Rombo Pisos es una entidad comercial que se dedica a la reventa de baldosas.
