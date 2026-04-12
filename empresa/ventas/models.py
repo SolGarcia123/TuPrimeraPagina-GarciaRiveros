@@ -24,5 +24,3 @@ class Baldosa(models.Model):
 
     def __str__(self):
         return f"{self.modelo} - {self.color}"
-
-

@@ -1,0 +1,86 @@
+{% extends "ventas/base.html" %}
+
+{% block contenido %}
+
+<h2 style="text-align: center;">Completar los siguientes datos: </h2>
+
+{% if mensaje_exito %}
+  <div style="
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 40%;
+    margin: 10px auto;
+    font-weight: bold;
+  ">
+    {{ mensaje_exito }}
+  </div>
+{% endif %}
+
+
+{% if mensaje_error %}
+  <div style="
+    background-color: #cce5ff;
+    color: #004085;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 40%;
+    margin: 10px auto;
+    font-weight: bold;
+  ">
+    {{ mensaje_error }}
+  </div>
+{% endif %}
+
+<div style="display: flex; justify-content: center;">
+
+    <form method="POST" enctype="multipart/form-data" style="
+        background-color:  #ccc;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+        width: 320px;
+    ">
+        {% csrf_token %}
+
+        <div style="text-align: left;">
+            {{ form.as_p }}
+        </div>
+
+        <div style="text-align: center; margin-top: 15px;">
+            <button type="submit">Registrarse</button>
+        </div>
+
+    </form>
+
+</div>
+
+<br>
+
+<div style="
+  background-color: #cce5ff;
+  color: #004085;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: left;
+  width: 40%;
+  margin: 15px auto;
+  font-size: 13px;
+  font-weight: bold;
+">
+  La contraseña debe cumplir con:
+  <br>✅ Mínimo 8 caracteres
+  <br>✅ Contener números
+  <br>✅ No debe ser similar al nombre de usuario
+</div>
+
+<div style="text-align: center;">
+    <a href="/account/login/">
+        <button>Volver al login</button>
+    </a>
+</div>
+
+{% endblock %}

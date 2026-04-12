@@ -1,0 +1,20 @@
+{% extends "ventas/base.html" %}
+
+{% block contenido %}
+
+<h2>¿Deseas eliminar este diseño?</h2>
+
+<p>{{ object.nombre }}</p>
+
+<form method="POST">
+  {% csrf_token %}
+  <button type="submit">Eliminar</button>
+</form>
+
+<br>
+
+<a href="{% url 'producto_detalle' object.id %}">
+  <button>Cancelar</button>
+</a>
+
+{% endblock %}

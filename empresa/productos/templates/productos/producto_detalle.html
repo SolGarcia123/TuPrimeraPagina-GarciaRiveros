@@ -1,0 +1,36 @@
+{% extends "ventas/base.html" %}
+
+{% block contenido %}
+
+<h2 style="text-align:center; color:#8B5CF6;">
+    {{ object.nombre }}
+</h2>
+
+<p><strong>Color:</strong> {{ object.color }}</p>
+<p><strong>Precio:</strong> ${{ object.precio }}</p>
+<p><strong>Descripción:</strong><br> {{ object.descripcion }}</p>
+
+{% if object.imagen %}
+  <div style="text-align:center;">
+    <img src="{{ object.imagen.url }}" width="200" style="
+        border-radius: 10px;
+        border: 2px solid #8B5CF6;
+    ">
+  </div>
+{% endif %}
+
+<br>
+
+<div style="display: flex; gap: 10px; justify-content: center;">
+
+    <form action="{% url 'productos' %}">
+        <button type="submit">Volver a Baldosas</button>
+    </form>
+
+    <form action="{% url 'buscar_producto' %}">
+        <button type="submit">Volver a Buscar Diseño</button>
+    </form>
+
+</div>
+
+{% endblock %}

@@ -32,7 +32,7 @@
         .menu a {
             margin-left: 15px;
             text-decoration: none;
-            color: #4b0082;
+            color: black;
             font-weight: bold;
         }
 
@@ -59,6 +59,19 @@
         h3 {
             color: #800080;
         }
+
+        input, select, textarea {
+            border-radius: 8px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border: 1px solid #4da6ff;
+            box-shadow: 0 0 5px rgba(77,166,255,0.5);
+        }
     </style>
 </head>
 
@@ -70,12 +83,15 @@
         </div>
 
         <div class="menu">
-            <a href="/">Inicio</a>
-            <a href="/crear-proveedor/">Proveedor</a>
-            <a href="/crear-cliente/">Cliente</a>
-            <a href="/crear-baldosa/">Baldosa</a>
-            <a href="/buscar-cliente/">Buscar Cliente</a>
-            <a href="/buscar-baldosa/">Buscar Baldosa</a>
+            <a href="/">🏠 INICIO</a>
+
+            {% if user.is_authenticated %}
+                <a href="/account/perfil/">👤 PERFIL</a>
+                <a href="/crear-proveedor/"> 🏢 PROVEEDORES</a>
+                <a href="/cliente/">🧑‍💼 CLIENTES</a>
+                <a href="{% url 'productos' %}">🧱 BALDOSAS</a>
+                <a href="/account/logout/">🔓 CERRAR SESIÓN</a>
+            {% endif %}
         </div>
     </div>
 

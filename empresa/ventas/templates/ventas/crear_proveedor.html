@@ -1,0 +1,31 @@
+{% extends "ventas/base.html" %}
+
+{% block contenido %}
+
+<h2 style="
+    color: #040209;
+    text-align: left;
+    font-weight: bold;
+">
+    AÑADIR PROVEEDOR
+</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <div style="text-align: left;">
+        <button type="submit" style="
+            background-color: #4da6ff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+        ">
+            Guardar
+        </button>
+    </div>
+</form>
+
+{% endblock %}

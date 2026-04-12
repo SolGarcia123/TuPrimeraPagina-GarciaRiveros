@@ -1,0 +1,60 @@
+{% extends "ventas/base.html" %}
+
+{% block contenido %}
+
+
+<h1>Buscar Diseño</h1>
+
+<form method="GET">
+  <input type="text" name="nombre" placeholder="Nombre del producto">
+  <button type="submit">Buscar</button>
+</form>
+
+<hr>
+
+{% if productos %}
+  {% for producto in productos %}
+    <div>
+      <h3>{{ producto.nombre }}</h3>
+      <p>Precio: {{ producto.precio }}</p>
+
+      {% if producto.imagen %}
+        <img src="{{ producto.imagen.url }}" width="150">
+      {% endif %}
+
+      <br>
+
+      
+    <div style="display: flex; gap: 10px; margin-top: 10px;">
+
+      <!-- Ver detalle -->
+      <form action="{% url 'producto_detalle' producto.id %}">
+          <button type="submit">Ver más detalles</button>
+      </form>
+
+      <!-- Editar -->
+      <form action="{% url 'editar_producto' producto.id %}">
+          <button type="submit">Editar</button>
+      </form>
+
+      <!-- Eliminar -->
+      <form action="{% url 'eliminar_producto' producto.id %}">
+          <button type="submit">Eliminar</button>
+      </form>
+  </div>
+
+    </div>
+    <hr>
+  {% endfor %}
+
+{% elif nombre %}
+  <p>No se encontraron resultados.</p>
+{% endif %}
+
+
+<form action="{% url 'productos' %}">
+  <button type="submit">Volver</button>
+</form>
+
+
+{% endblock %}

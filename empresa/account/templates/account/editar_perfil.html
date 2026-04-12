@@ -1,0 +1,67 @@
+{% extends "ventas/base.html" %}
+
+{% block contenido %}
+
+<h2 style="text-align: CENTER;">EDITAR PERFIL</h2>
+
+<div style="display: flex; justify-content: center;">
+
+    <form method="POST" enctype="multipart/form-data" style="
+        background-color:  #ccc;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+        width: 400px;
+    ">
+        {% csrf_token %}
+
+        <div style="text-align: left;">
+
+            <div style="margin-bottom: 15px;">
+                <label>Nombre:</label>
+                {{ form.nombre }}
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label>Apellido:</label>
+                {{ form.apellido }}
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label>Fecha nacimiento:</label>
+                {{ form.fecha_nacimiento }}
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label>DNI:</label>
+                {{ form.dni }}
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label>Imagen de perfil:</label><br>
+
+                {% if form.instance.imagen %}
+                    <img src="{{ form.instance.imagen.url }}" width="140" style="
+                        border-radius: 10px;
+                        margin: 10px 0;
+                        border: 2px solid #4da6ff;
+                    "><br>
+                {% endif %}
+                
+                <p style="font-size: 12px; color: #555; margin-top: 5px;">
+                Si se desea cambiar el archivo, suba nuevamente una imagen.
+                </p>
+                <input type="file" name="imagen">
+            </div>
+
+        </div>
+
+        <div style="text-align: left; margin-top: 25px;">
+            <button type="submit">Guardar cambios</button>
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

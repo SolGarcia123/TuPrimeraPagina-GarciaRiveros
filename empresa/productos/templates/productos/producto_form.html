@@ -1,0 +1,70 @@
+{% extends "ventas/base.html" %}
+
+{% block contenido %}
+
+<div style="background-color: #F3E8FF; padding: 20px; border-radius: 15px;">
+
+<h2>NUEVO DISEÑO</h2>
+
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+
+  <div style="text-align: left; color: #333;">
+
+    <label style="text-transform: uppercase;">Nombre:</label><br>
+    {{ form.nombre }}<br><br>
+
+    <label style="text-transform: uppercase;">Color:</label><br>
+    {{ form.color }}<br><br>
+
+    <label style="text-transform: uppercase;">Precio:</label><br>
+    {{ form.precio }}<br><br>
+
+    <label style="text-transform: uppercase;">Imagen:</label><br>
+
+    {% if form.instance.imagen %}
+        <img src="{{ form.instance.imagen.url }}" width="120" style="
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #8B5CF6;
+        "><br>
+    {% endif %}
+
+    <p style="font-size: 12px; color: #555; margin-top: 5px;">
+    Si se desea cambiar el archivo, suba nuevamente una imagen.
+    </p>
+
+    <input type="file" name="imagen"><br><br>
+
+    <label style="text-transform: uppercase;">Descripción:</label><br>
+    <div>
+    {{ form.descripcion }}
+    </div>
+
+  </div>
+
+  <button type="submit" style="
+    margin-top: 20px;
+">
+    Guardar
+</button>
+</form>
+
+<br>
+
+<a href="{% url 'productos' %}">
+  <button>Volver</button>
+</a>
+
+</div>
+
+<style>
+    textarea {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+        height: 80px;
+    }
+</style>
+
+{% endblock %}

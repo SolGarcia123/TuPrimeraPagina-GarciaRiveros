@@ -1,0 +1,42 @@
+{% extends "ventas/base.html" %}
+
+{% block contenido %}
+
+<h1 style="text-align:center;">CLIENTES</h1>
+
+<div style="
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+">
+
+    <a href="/crear-cliente/">
+        <button style="
+            background-color: #8B5CF6;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+        ">
+            AÑADIR CLIENTE
+        </button>
+    </a>
+
+    <a href="/buscar-cliente/">
+        <button style="
+            background-color: #8B5CF6;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+        ">
+            BUSCAR CLIENTE
+        </button>
+    </a>
+
+</div>
+
+{% endblock %}

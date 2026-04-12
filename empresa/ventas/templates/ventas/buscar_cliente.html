@@ -1,0 +1,36 @@
+{% extends "ventas/base.html" %}
+
+{% block contenido %}
+
+<h2>Buscar Cliente</h2>
+
+<form method="GET">
+
+    <input type="text" name="nombre" placeholder="Buscar por nombre" style="
+        width: 100%;
+        margin-bottom: 10px;
+    ">
+
+    <div style="margin-top: 10px;">
+        <button type="submit" style="
+            background-color: #8B5CF6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+            border: none;
+        ">
+            Buscar
+        </button>
+    </div>
+
+</form>
+
+<ul style="margin-top: 20px;">
+    {% for c in clientes %}
+        <li>{{ c.nombre }} - {{ c.email }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

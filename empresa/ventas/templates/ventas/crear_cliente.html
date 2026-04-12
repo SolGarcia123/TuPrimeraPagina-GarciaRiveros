@@ -1,8 +1,8 @@
-{% extends "base.html" %}
+{% extends "ventas/base.html" %}
 
 {% block contenido %}
 
-<h2>Añadir Cliente</h2> 
+<h2>AÑADIR CLIENTE</h2> 
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
