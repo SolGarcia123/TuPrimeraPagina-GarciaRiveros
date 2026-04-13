@@ -9,6 +9,7 @@ Este proyecto es una página web desarrollada en Django que permite gestionar pr
 
 ## Funcionalidades
 
+- Registro de usuario(incluye log in, modificación del perfil y log out)
 - Añadir proveedores (persona/empresa que venden el producto final)
 - Añadir clientes (personas que compraron el producto)
 - Añadir nuevos diseños de baldosas
