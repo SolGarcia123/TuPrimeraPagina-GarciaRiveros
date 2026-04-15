@@ -1,0 +1,42 @@
+{% extends "ventas/base.html" %}
+
+{% block contenido %}
+
+<h1 style="text-align:center;">PROVEEDORES</h1>
+
+<div style="
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+">
+
+    <a href="/crear-proveedor/">
+        <button style="
+            background-color: #8B5CF6;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+        ">
+            AÑADIR PROVEEDOR
+        </button>
+    </a>
+
+    <a href="/buscar-proveedor/">
+        <button style="
+            background-color: #8B5CF6;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+        ">
+            BUSCAR PROVEEDOR
+        </button>
+    </a>
+
+</div>
+
+{% endblock %}

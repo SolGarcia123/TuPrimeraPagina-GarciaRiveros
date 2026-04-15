@@ -23,13 +23,30 @@
 
 <div style="display: flex; gap: 10px; justify-content: center;">
 
-    <form action="{% url 'productos' %}">
-        <button type="submit">Volver a Baldosas</button>
-    </form>
 
-    <form action="{% url 'buscar_producto' %}">
-        <button type="submit">Volver a Buscar Diseño</button>
-    </form>
+    <a href="{% url 'productos' %}" style="
+        background-color: #8B5CF6;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+    ">
+        Ver más detalles
+    </a>
+
+    <a href="{% url 'buscar_producto' %}" style="
+        background-color: #8B5CF6;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+    ">
+        Volver
+    </a>
 
 </div>
 

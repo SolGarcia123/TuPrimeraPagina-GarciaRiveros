@@ -6,7 +6,36 @@
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Guardar</button>
 
+    <button type="submit" style="
+        background-color: #8B5CF6;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        font-weight: normal;
+        font-size: 14px;
+    ">
+        GUARDAR
+    </button>
+
+    <div style="margin-top: 10px;">
+        <a href="{% url 'cliente_inicio' %}" style="
+            background-color: #8B5CF6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: normal;
+            font-size: 14px;
+        ">
+            VOLVER
+        </a>
+    </div>
+</form>
 
 {% endblock %}

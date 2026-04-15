@@ -97,7 +97,7 @@
 
             {% if user.is_authenticated %}
                 <a href="/account/perfil/">👤 PERFIL</a>
-                <a href="/crear-proveedor/">🏢 PROVEEDORES</a>
+                <a href="{% url 'proveedor_inicio' %}">🏢 PROVEEDORES</a>
                 <a href="/cliente/">🧑‍💼 CLIENTES</a>
                 <a href="{% url 'productos' %}">🧱 BALDOSAS</a>
                 <a href="/account/logout/">🔓 CERRAR SESIÓN</a>

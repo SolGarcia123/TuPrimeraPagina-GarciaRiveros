@@ -14,17 +14,34 @@
     {% csrf_token %}
     {{ form.as_p }}
 
-    <div style="text-align: left;">
-        <button type="submit" style="
-            background-color: #4da6ff;
+    <button type="submit" style="
+        background-color: #8B5CF6;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        font-weight: normal;
+        font-size: 14px;
+    ">
+        GUARDAR
+    </button>
+
+    <div style="margin-top: 10px;">
+        <a href="{% url 'proveedor_inicio' %}" style="
+            background-color: #8B5CF6;
             color: white;
             padding: 10px 20px;
             border-radius: 10px;
-            border: none;
-            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: normal;
+            font-size: 14px;
         ">
-            Guardar
-        </button>
+            VOLVER
+        </a>
     </div>
 </form>
 

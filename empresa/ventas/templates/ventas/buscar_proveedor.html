@@ -2,16 +2,16 @@
 
 {% block contenido %}
 
-<h2>🔍 BUSCAR CLIENTE</h2>
+<h2>🔍 BUSCAR PROVEEDORES</h2>
 
 <form method="GET">
 
-    <input type="text" name="nombre" placeholder="Buscar por nombre" style="
-        width: 100%;
-        margin-bottom: 10px;
-    ">
+<input type="text" name="nombre" placeholder="Buscar por nombre" style="
+    width: 100%;
+    margin-bottom: 10px;
+">
 
- <div style="margin-top: 10px;">
+<div style="margin-top: 10px;">
     <button type="submit" style="
         background-color: #8B5CF6;
         color: white;
@@ -27,8 +27,10 @@
     </button>
 </div>
 
+</form>
+
 <div style="margin-top: 10px;">
-    <a href="{% url 'cliente_inicio' %}" style="
+    <a href="{% url 'proveedor_inicio' %}" style="
         background-color: #8B5CF6;
         color: white;
         padding: 10px 20px;
@@ -43,13 +45,13 @@
     </a>
 </div>
 
-
-</form>
+<hr>
 
 <ul style="margin-top: 20px;">
-    {% for c in clientes %}
-        <li>{{ c.nombre }} - {{ c.email }}</li>
+    {% for p in proveedores %}
+        <li>{{ p.nombre }} - {{ p.email }}</li>
     {% endfor %}
 </ul>
 
 {% endblock %}
+
