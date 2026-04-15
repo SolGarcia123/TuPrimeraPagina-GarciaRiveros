@@ -40,15 +40,9 @@ def buscar_cliente(request):
 
     return render(request, "ventas/buscar_cliente.html", {"clientes": clientes})
 
-# Formulario para buscar baldosa
-def buscar_baldosa(request):
-    modelo = request.GET.get("modelo")
-    baldosas = Baldosa.objects.filter(modelo__icontains=modelo) if modelo else []
-
-    return render(request, "ventas/buscar_baldosa.html", {
-        "baldosas": baldosas,
-        "modelo": modelo
-    })
 
 def cliente_inicio(request):
     return render(request, "ventas/cliente_inicio.html")
+
+def about(request):
+    return render(request, 'ventas/about.html')

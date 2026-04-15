@@ -18,27 +18,27 @@
         <div style="text-align: left;">
 
             <div style="margin-bottom: 15px;">
-                <label>Nombre:</label>
+            <label style="font-size: 17px; font-weight: bold;">NOMBRE:</label>
                 {{ form.nombre }}
             </div>
 
             <div style="margin-bottom: 15px;">
-                <label>Apellido:</label>
+            <label style="font-size: 17px; font-weight: bold;">APELLIDO:</label>
                 {{ form.apellido }}
             </div>
 
             <div style="margin-bottom: 15px;">
-                <label>Fecha nacimiento:</label>
+            <label style="font-size: 17px; font-weight: bold;">FECHA NACIMIENTO:</label>
                 {{ form.fecha_nacimiento }}
             </div>
 
             <div style="margin-bottom: 15px;">
-                <label>DNI:</label>
+            <label style="font-size: 17px; font-weight: bold;">DNI:</label>
                 {{ form.dni }}
             </div>
 
             <div style="margin-bottom: 15px;">
-                <label>Imagen de perfil:</label><br>
+            <label style="font-size: 17px; font-weight: bold;">IMAGEN DE PERFIL:</label><br>
 
                 {% if form.instance.imagen %}
                     <img src="{{ form.instance.imagen.url }}" width="140" style="
@@ -48,7 +48,7 @@
                     "><br>
                 {% endif %}
                 
-                <p style="font-size: 12px; color: #555; margin-top: 5px;">
+                <p style="font-size: 15px; color: #555; margin-top: 5px;">
                 Si se desea cambiar el archivo, suba nuevamente una imagen.
                 </p>
                 <input type="file" name="imagen">

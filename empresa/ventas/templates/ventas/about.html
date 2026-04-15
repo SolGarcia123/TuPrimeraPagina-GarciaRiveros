@@ -1,0 +1,125 @@
+{% extends "ventas/base.html" %}
+{% load static %}
+
+{% block contenido %}
+
+<h1 style="text-align:center;">🏢 Sobre Nosotros</h1>
+
+<div style="
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+">
+
+    <!-- EMPRESA -->
+    <div style="
+        width: 48%;
+        background-color: #ede9fe;
+        padding: 30px 40px;
+        border-radius: 15px;
+        text-align: justify;
+        line-height: 1.8;
+    ">
+
+        <!-- LOGO -->
+        <div style="text-align:center; margin-bottom: 15px;">
+            <img src="{% static 'ventas/img/logo2.jpg' %}" width="150">
+        </div>
+
+        <p>
+                Nos dedicamos a la reventa de baldosas de alta calidad para interiores y exteriores.
+        </p>
+
+        <ul>
+            <li>☑️ DISEÑO</li>
+            <li>☑️ DURABILIDAD</li>
+            <li>☑️ ESTÉTICA</li>
+            <li>☑️ CALIDAD</li>
+        </ul>
+
+
+        <div style="margin-top: 20px; text-align: center;">
+    
+            <h4>🎥 Conocé nuestro producto</h4>
+
+            <video width="100%" height="200" controls style="border-radius: 10px;">
+                <source src="{% static 'ventas/video/mi_video.mp4' %}" type="video/mp4">
+                Tu navegador no soporta video.
+            </video>
+
+</div>
+
+    </div>
+
+    <!-- SOBRE MI -->
+    <div style="
+        width: 48%;
+        background-color: #e6f2ff;
+        padding: 25px;
+        border-radius: 15px;
+        line-height: 1.6;
+    ">
+
+        <h3 style="color:#4da6ff;">👩‍💻 Desarrolladora de la aplicación</h3>
+
+        <p><strong>Maria Sol García Riveros</strong></p>
+
+        <p style="font-style: italic;">
+            Lic. en Economía - Consultor Semi-Senior Oracle EPM
+        </p>
+
+        <p>💼 Perfil profesional:</p>
+
+        <a href="https://www.linkedin.com/in/garciariveros/" target="_blank">
+            <button style="
+                background-color: #074481;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                border: none;
+                font-weight: bold;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+            ">
+                <span>🧑‍💼</span>
+                <span>Ver LinkedIn</span>
+            </button>
+        </a>
+
+        <a href="{% static 'ventas/cv.pdf' %}" target="_blank">
+            <button style="
+                background-color: #074481;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                border: none;
+                font-weight: bold;
+                margin-left: 10px;
+            ">
+                📄 Ver CV
+            </button>
+        </a>
+
+        <p style="margin-top: 20px;">
+            Este proyecto fue realizado como parte del aprendizaje en desarrollo web
+            utilizando <strong>Django</strong> y <strong>Python</strong>.
+        </p>
+
+        <p>Se implementaron funcionalidades como:</p>
+
+        <ul>
+            <li>🔹 Gestión de clientes y proveedores</li>
+            <li>🔹 Inventario de Baldosas</li>
+            <li>🔹 Sistema de login y perfiles</li>
+        </ul>
+
+        <p>
+            Este sistema busca simular una aplicación real de gestión comercial.
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}

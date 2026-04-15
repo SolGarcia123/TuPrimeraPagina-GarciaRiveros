@@ -2,37 +2,50 @@
 
 {% block contenido %}
 
-<div style="display: flex; flex-direction: column; height: 100%; min-height: 350px;">
+<div style="display: flex; flex-direction: column; min-height: 350px;">
 
-    
+    <!-- TEXTO SUPERIOR -->
     <div style="text-align: center;">
         <h1>BIENVENIDOS A ROMBO PISOS</h1>
 
-        <h3 style="color: #800080; font-style: italic;">
+        <h2 style="color: #800080; font-style: italic;">
             "....Donde la creatividad y la calidad se unen..."
-        </h3>
+        </h2>
 
-        <h4 style="color: hsla(358, 82%, 61%, 0.915);">
-            Amplia variedad de pisos para interior y exterior.
+        <h2 style="color: rgb(75, 113, 226);">
+            AMPLIA VARIEDAD DE PISOS PARA INTERIOR Y EXTERIOR.
+        </h2>
+
+        <h4 style="color: rgb(81, 79, 79);">
+            ⭐️ | Pisos Premium Encastrables #1<br>
+            🚀 | Fabricamos +45.000 m2 en 4 años<br>
+            💎 | Talleres • Concesionarias • Gym • Showrooms
         </h4>
     </div>
 
-   
     <div style="flex-grow: 1;"></div>
 
-    
-    <div style="text-align: center; display: flex; gap: 20px;">
+    <!-- CAJITAS -->
+    <div style="
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    ">
 
         <div style="
             background-color: white;
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-            border-left: 5px solid hsla(358, 82%, 61%, 0.915);
+            border-left: 5px solid #8B5CF6;
+            width: 180px;
+            text-align: center;
         ">
             📍 <strong>DIRECCIÓN</strong><br>
-            Calle Carhué Nro. 123<br>
-            Barrio Liniers, CABA
+            El Palomar<br>
+            Zona Oeste
         </div>
 
         <div style="
@@ -40,17 +53,80 @@
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-            border-left: 5px solid hsla(358, 82%, 61%, 0.915);
+            border-left: 5px solid #8B5CF6;
+            width: 180px;
+            text-align: center;
         ">
-            📞 <strong>CONTACTO</strong><br>
-            Presupuestos sin cargo<br>
-            011 2397-5678 | 4655-8693
+            📞 <strong>LLAMADAS</strong><br>
+            Presupuestos<br>
+            011 31171276
+        </div>
+
+        <div style="
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            border-left: 5px solid #8B5CF6;
+            width: 180px;
+            text-align: center;
+        ">
+            📷 <strong>INSTAGRAM</strong><br><br>
+            <a href="https://www.instagram.com/rombo.pisos/" target="_blank">
+                <button style="
+                    background-color: #074481;
+                    color: white;
+                    padding: 10px 20px;
+                    border-radius: 10px;
+                    border: none;
+                    font-weight: bold;
+                ">
+                    ACCEDÉ ACÁ
+                </button>
+            </a>
+        </div>
+
+        <div style="
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            border-left: 5px solid #8B5CF6;
+            width: 180px;
+            text-align: center;
+        ">
+            👍 <strong>FACEBOOK</strong><br><br>
+            <a href="https://www.facebook.com/rombo.pisos/" target="_blank">
+                <button style="
+                    background-color: #074481;
+                    color: white;
+                    padding: 10px 20px;
+                    border-radius: 10px;
+                    border: none;
+                    font-weight: bold;
+                ">
+                    ACCEDÉ ACÁ
+                </button>
+            </a>
+        </div>
+
+        <div style="
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            border-left: 5px solid #8B5CF6;
+            width: 180px;
+            text-align: center;
+        ">
+            📦 <strong>ENVÍOS</strong><br>
+            Zona Oeste<br>
+            A todo el país
         </div>
 
     </div>
 
 </div>
-
 
 {% if not user.is_authenticated %}
 <div style="
