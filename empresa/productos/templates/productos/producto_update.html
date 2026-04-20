@@ -1,0 +1,105 @@
+{% extends "ventas/base.html" %}
+
+{% block contenido %}
+
+<h2 style="text-align: center;">EDITAR PRODUCTO</h2>
+
+<div style="display: flex; justify-content: center;">
+
+    <form method="POST" enctype="multipart/form-data" style="
+        background-color: #ccc;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+        width: 400px;
+    ">
+        {% csrf_token %}
+
+        <div style="text-align: left;">
+            <div style="margin-bottom: 15px;">
+                <label style="font-size: 17px; font-weight: bold;">CODIGO:</label>
+                {{ form.codigo }}
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label style="font-size: 17px; font-weight: bold;">NOMBRE:</label>
+                {{ form.nombre }}
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label style="font-size: 17px; font-weight: bold;">FECHA INGRESO:</label>
+                {{ form.fecha }}
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label style="font-size: 17px; font-weight: bold;">PRECIO:</label>
+                {{ form.precio }}
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label style="font-size: 17px; font-weight: bold;">DESCRIPCIÓN:</label>
+                {{ form.descripcion }}
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label style="font-size: 17px; font-weight: bold;">COLOR:</label>
+                {{ form.color }}
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label style="font-size: 17px; font-weight: bold;">IMAGEN:</label><br>
+
+                {% if form.instance.imagen %}
+                    <img src="{{ form.instance.imagen.url }}" width="140" style="
+                        border-radius: 10px;
+                        margin: 10px 0;
+                        border: 2px solid #4da6ff;
+                    "><br>
+
+                    <p style="font-size: 14px; color: #555;">
+                        Si desea cambiar la imagen, cargue una nueva.
+                    </p>
+                {% endif %}
+
+                <input type="file" name="imagen">
+            </div>
+
+        </div>
+
+        <div style="margin-top: 20px; text-align: left;">
+            <button type="submit" style="
+                background-color: #8B5CF6;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                text-transform: uppercase;
+                border: none;
+                cursor: pointer;
+                font-weight: normal;
+                font-size: 14px;
+            ">
+                GUARDAR CAMBIOS
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
+<div style="margin-top: 20px; text-align: left;">
+    <a href="{% url 'buscar_producto' %}?nombre={{ nombre }}"  style="
+        background-color: #8B5CF6;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: normal;
+        font-size: 14px;
+    ">
+        VOLVER
+    </a>
+</div>
+
+{% endblock %}

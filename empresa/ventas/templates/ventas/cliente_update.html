@@ -1,0 +1,53 @@
+{% extends "ventas/base.html" %}
+
+{% block contenido %}
+
+<h2 style="margin-bottom: 20px;">✏️ EDITAR CLIENTE</h2>
+
+<div style="
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+">
+
+    <form method="POST" action="?nombre={{ nombre }}">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" style="
+            background-color: #8B5CF6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            font-weight: normal;
+            font-size: 14px;
+            margin-top: 10px;
+        ">
+            GUARDAR CAMBIOS
+        </button>
+    </form>
+
+</div>
+
+<div style="margin-top: 20px;">
+    <a href="{% url 'buscar_cliente' %}?nombre={{ nombre }}" style="
+        background-color: #8B5CF6;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: normal;
+        font-size: 14px;
+    ">
+        VOLVER
+    </a>
+</div>
+
+{% endblock %}

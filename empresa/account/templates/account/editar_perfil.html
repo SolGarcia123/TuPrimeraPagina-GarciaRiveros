@@ -7,7 +7,7 @@
 <div style="display: flex; justify-content: center;">
 
     <form method="POST" enctype="multipart/form-data" style="
-        background-color:  #ccc;
+        background-color: #ccc;
         padding: 40px;
         border-radius: 10px;
         box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
@@ -18,27 +18,27 @@
         <div style="text-align: left;">
 
             <div style="margin-bottom: 15px;">
-            <label style="font-size: 17px; font-weight: bold;">NOMBRE:</label>
+                <label style="font-size: 17px; font-weight: bold;">NOMBRE:</label>
                 {{ form.nombre }}
             </div>
 
             <div style="margin-bottom: 15px;">
-            <label style="font-size: 17px; font-weight: bold;">APELLIDO:</label>
+                <label style="font-size: 17px; font-weight: bold;">APELLIDO:</label>
                 {{ form.apellido }}
             </div>
 
             <div style="margin-bottom: 15px;">
-            <label style="font-size: 17px; font-weight: bold;">FECHA NACIMIENTO:</label>
+                <label style="font-size: 17px; font-weight: bold;">FECHA NACIMIENTO:</label>
                 {{ form.fecha_nacimiento }}
             </div>
 
             <div style="margin-bottom: 15px;">
-            <label style="font-size: 17px; font-weight: bold;">DNI:</label>
+                <label style="font-size: 17px; font-weight: bold;">DNI:</label>
                 {{ form.dni }}
             </div>
 
             <div style="margin-bottom: 15px;">
-            <label style="font-size: 17px; font-weight: bold;">IMAGEN DE PERFIL:</label><br>
+                <label style="font-size: 17px; font-weight: bold;">IMAGEN DE PERFIL:</label><br>
 
                 {% if form.instance.imagen %}
                     <img src="{{ form.instance.imagen.url }}" width="140" style="
@@ -47,35 +47,48 @@
                         border: 2px solid #4da6ff;
                     "><br>
                 {% endif %}
-                
+
                 <p style="font-size: 15px; color: #555; margin-top: 5px;">
-                Si se desea cambiar el archivo, suba nuevamente una imagen.
+                    Si se desea cambiar el archivo, suba nuevamente una imagen.
                 </p>
+
                 <input type="file" name="imagen">
             </div>
 
         </div>
 
+        <div style="text-align: left; margin-top: 15px;">
+            <a href="{% url 'password_change' %}" style="
+                background-color: #8B5CF6;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 14px;
+            ">
+                CAMBIAR CONTRASEÑA
+            </a>
+        </div>
 
         <div style="margin-top: 10px;">
-            <a href="{% url 'cliente_inicio' %}" style="
+            <button type="submit" style="
                 background-color: #8B5CF6;
                 color: white;
                 padding: 10px 20px;
                 border-radius: 10px;
                 text-transform: uppercase;
-                text-decoration: none;
-                display: inline-block;
-                font-weight: normal;
+                border: none;
                 font-size: 14px;
+                cursor: pointer;
             ">
                 GUARDAR
-            </a>
+            </button>
         </div>
-
 
     </form>
 
 </div>
+
 
 {% endblock %}

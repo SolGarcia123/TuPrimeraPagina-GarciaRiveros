@@ -2,7 +2,8 @@ from django.db import models
 
 class Proveedor(models.Model):
     nombre = models.CharField(max_length=50)
-    telefono = models.CharField(max_length=20)
+    telefono = models.CharField(max_length=50, default='')
+
 
     def __str__(self):
         return self.nombre
@@ -14,13 +15,3 @@ class Cliente(models.Model):
 
     def __str__(self):
         return self.nombre
-
-
-class Baldosa(models.Model):
-    modelo = models.CharField(max_length=50)
-    color = models.CharField(max_length=30)
-    precio = models.FloatField()
-    proveedor = models.ForeignKey(Proveedor, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f"{self.modelo} - {self.color}"

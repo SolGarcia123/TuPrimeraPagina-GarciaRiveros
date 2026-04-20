@@ -2,19 +2,60 @@
 
 {% block contenido %}
 
-<h2>¿Deseas eliminar este diseño?</h2>
+<h2 style="margin-bottom: 20px;">🗑️ ELIMINAR DISEÑO</h2>
 
-<p>{{ object.nombre }}</p>
+<div style="
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+">
 
-<form method="POST">
-  {% csrf_token %}
-  <button type="submit">Eliminar</button>
-</form>
+    <p><strong>¿Deseas eliminar el diseño seleccionado?</strong></p>
 
-<br>
+    <p><strong>Codigo:</strong> {{ object.codigo}}</p>
+    <p><strong>Nombre:</strong> {{ object.nombre}}</p>
+    <p><strong>Precio:</strong> {{ object.precio}}</p>
+    <p><strong>Color:</strong> {{ object.color}}</p>
+    
+</div>
 
-<a href="{% url 'producto_detalle' object.id %}">
-  <button>Cancelar</button>
-</a>
+
+<div style="margin-top: 20px;">
+
+    <form method="POST">
+      {% csrf_token %}
+      <button type="submit" style="
+          background-color: #8B5CF6;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
+          text-transform: uppercase;
+          width: 100px;
+          display: block;
+          margin-bottom: 10px;
+      ">
+        ELIMINAR
+      </button>
+    </form>
+
+    <a href="{% url 'buscar_producto' %}?nombre={{ nombre }}">
+      <button style="
+          background-color: #8B5CF6;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
+          text-transform: uppercase;
+          width: 100px;
+      ">
+        VOLVER
+      </button>
+    </a>
+
+</div>
 
 {% endblock %}

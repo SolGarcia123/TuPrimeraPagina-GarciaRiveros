@@ -5,18 +5,18 @@
 <h2 style="text-align: center;">Completar los siguientes datos: </h2>
 
 {% if mensaje_exito %}
-  <div style="
-    background-color: #d4edda;
-    color: #155724;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    width: 40%;
-    margin: 10px auto;
-    font-weight: bold;
-  ">
-    {{ mensaje_exito }}
-  </div>
+        <div style="
+            background-color: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            width: 40%;
+            margin: 10px auto;
+            font-weight: bold;
+        ">
+            {{ mensaje_exito }}
+        </div>
 {% endif %}
 
 
@@ -51,7 +51,7 @@
         </div>
 
         <div style="text-align: center; margin-top: 15px;">
-            <button type="submit">Registrarse</button>
+            <button type="submit"> <strong>REGISTRARSE</strong></button>
         </div>
 
     </form>
@@ -78,8 +78,8 @@
 </div>
 
 <div style="text-align: center;">
-    <a href="/account/login/">
-        <button>Volver al login</button>
+    <a href="{% url 'login' %}">
+        <button> <strong>VOLVER</strong></button>
     </a>
 </div>
 

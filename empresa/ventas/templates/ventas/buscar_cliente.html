@@ -6,26 +6,28 @@
 
 <form method="GET">
 
-    <input type="text" name="nombre" placeholder="Buscar por nombre" style="
-        width: 100%;
-        margin-bottom: 10px;
-    ">
+<input type="text" name="nombre" placeholder="Buscar por nombre" style="
+    width: 100%;
+    margin-bottom: 10px;
+">
 
- <div style="margin-top: 10px;">
+<div style="margin-top: 10px;">
     <button type="submit" style="
         background-color: #8B5CF6;
         color: white;
         padding: 10px 20px;
         border-radius: 10px;
         text-transform: uppercase;
-        border: none;
-        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
         font-weight: normal;
         font-size: 14px;
     ">
         BUSCAR
     </button>
 </div>
+
+</form>
 
 <div style="margin-top: 10px;">
     <a href="{% url 'cliente_inicio' %}" style="
@@ -43,13 +45,95 @@
     </a>
 </div>
 
+<div style="margin-top:10px;">
+    <a href="{% url 'reporte_clientes' %}?nombre={{ request.GET.nombre }}"style="
+            background-color:#8B5CF6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: normal;
+            font-size: 14px;
+    ">
+        REPORTE
+    </a>
+</div>
 
-</form>
+<hr>
 
-<ul style="margin-top: 20px;">
-    {% for c in clientes %}
-        <li>{{ c.nombre }} - {{ c.email }}</li>
-    {% endfor %}
-</ul>
+{% if clientes %}
+
+<div style="width:100%; overflow-x:auto;">
+
+<table border="1" style="
+    width:100%;
+    text-align:center;
+    border-collapse: collapse;
+">
+
+    <thead style="background-color:#ddd;">
+        <tr>
+            <th style="padding:12px;">Nombre</th>
+            <th style="padding:12px;">Email</th>
+            <th style="padding:12px;">Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for c in clientes %}
+        <tr>
+            <td style="padding:10px;">{{ c.nombre }}</td>
+            <td style="padding:10px;">{{ c.email }}</td>
+
+            <td style="padding:10px;">
+
+                <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+                    <a href="{% url 'cliente_detail' c.id %}?nombre={{ request.GET.nombre }}" style="
+                        background-color: #8B5CF6;
+                        color: white;
+                        padding: 8px 12px;
+                        border-radius: 8px;
+                        text-decoration: none;
+                        font-size: 13px;
+                    ">
+                        VER DETALLES
+                    </a>
+                    <a href="{% url 'cliente_update' c.id %}?nombre={{ request.GET.nombre }}" style="
+                        background-color: #8B5CF6;
+                        color: white;
+                        padding: 8px 12px;
+                        border-radius: 8px;
+                        text-decoration: none;
+                        font-size: 13px;
+                    ">
+                        EDITAR
+                    </a>
+                    <a href="{% url 'cliente_confirm_delete' c.id %}?nombre={{ request.GET.nombre }}" style="
+                        background-color: #8B5CF6;
+                        color: white;
+                        padding: 8px 12px;
+                        border-radius: 8px;
+                        text-decoration: none;
+                        font-size: 13px;
+                    ">
+                        ELIMINAR
+                    </a>
+
+                </div>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+</div>
+
+{% elif request.GET.nombre %}
+    <p>No se encontraron clientes con ese nombre.</p>
+{% endif %}
 
 {% endblock %}

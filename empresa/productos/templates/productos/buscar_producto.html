@@ -2,27 +2,33 @@
 
 {% block contenido %}
 
-
 <h2>🔍 BUSCAR DISEÑO</h2>
 
 <form method="GET">
-  <input type="text" name="nombre" placeholder="Nombre del producto">
 
- <div style="margin-top: 10px;">
+<input type="text" name="nombre" placeholder="Nombre del producto" style="
+    width: 100%;
+    margin-bottom: 10px;
+">
+
+<div style="margin-top: 10px;">
     <button type="submit" style="
         background-color: #8B5CF6;
         color: white;
         padding: 10px 20px;
         border-radius: 10px;
         text-transform: uppercase;
-        border: none;
-        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
         font-weight: normal;
         font-size: 14px;
     ">
         BUSCAR
     </button>
 </div>
+
+</form>
+
 
 <div style="margin-top: 10px;">
     <a href="{% url 'productos' %}" style="
@@ -40,67 +46,106 @@
     </a>
 </div>
 
+<div style="margin-top: 10px;">
+    <a href="{% url 'reporte_productos' %}?nombre={{ request.GET.nombre }}" style="
+        background-color: #8B5CF6;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: normal;
+        font-size: 14px;
+    ">
+        REPORTE
+    </a>
+</div>
+
 <hr>
 
 {% if productos %}
-  {% for producto in productos %}
-    <div>
-      <h3>{{ producto.nombre }}</h3>
-      <p>Precio: {{ producto.precio }}</p>
 
-      {% if producto.imagen %}
-        <img src="{{ producto.imagen.url }}" width="150">
-      {% endif %}
+<div style="width:100%; overflow-x:auto;">
 
-      <br>
+<table border="1" style="
+    width:100%;
+    text-align:center;
+    border-collapse: collapse;
+">
 
-      
-    <div style="display: flex; gap: 10px; margin-top: 10px;">
+    <thead style="background-color:#ddd;">
+        <tr>
+            <th style="padding:12px;">Código</th>
+            <th style="padding:12px;">Nombre</th>
+            <th style="padding:12px;">Precio</th>
+            <th style="padding:12px;">Imagen</th>
+            <th style="padding:12px;">Acciones</th>
+        </tr>
+    </thead>
 
-      <!-- Ver detalle -->
-      <a href="{% url 'producto_detalle' producto.id %}" style="
-        background-color: #8B5CF6;
-        color: white;
-        padding: 8px 12px;
-        border-radius: 5px;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 14px;
-    ">
-        Ver más detalles
-    </a>
+    <tbody>
+        {% for producto in productos %}
+        <tr>
+            <td style="padding:10px;">{{ producto.codigo }}</td>
+            <td style="padding:10px;">{{ producto.nombre }}</td>
+            <td style="padding:10px;">${{ producto.precio }}</td>
 
-       <a href="{% url 'producto_detalle' producto.id %}" style="
-        background-color: #8B5CF6;
-        color: white;
-        padding: 8px 12px;
-        border-radius: 5px;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 14px;
-    ">
-        Editar
-    </a>
+            <td style="padding:10px;">
+                {% if producto.imagen %}
+                    <img src="{{ producto.imagen.url }}" width="80">
+                {% else %}
+                    Sin imagen
+                {% endif %}
+            </td>
 
-       <a href="{% url 'producto_detalle' producto.id %}" style="
-        background-color: #8B5CF6;
-        color: white;
-        padding: 8px 12px;
-        border-radius: 5px;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 14px;
-    ">
-        Eliminar
-    </a>
-  </div>
+            <td style="padding:10px;">
 
-    </div>
-    <hr>
-  {% endfor %}
+                <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+                    <a href="{% url 'producto_detalle' producto.id %}?nombre={{ request.GET.nombre }}" style="
+                        background-color: #8B5CF6;
+                        color: white;
+                        padding: 8px 12px;
+                        border-radius: 8px;
+                        text-decoration: none;
+                        font-size: 13px;
+                    ">
+                        VER DETALLES
+                    </a>
+                    <a href="{% url 'producto_update' producto.id %}?nombre={{ request.GET.nombre }}" style="
+                        background-color: #8B5CF6;
+                        color: white;
+                        padding: 8px 12px;
+                        border-radius: 8px;
+                        text-decoration: none;
+                        font-size: 13px;
+                    ">
+                        EDITAR
+                    </a>
+                    <a href="{% url 'producto_confirm_delete' producto.id %}?nombre={{ request.GET.nombre }}" style="
+                        background-color: #8B5CF6;
+                        color: white;
+                        padding: 8px 12px;
+                        border-radius: 8px;
+                        text-decoration: none;
+                        font-size: 13px;
+                    ">
+                        ELIMINAR
+                    </a>
+
+                </div>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+</div>
 
 {% elif nombre %}
-  <p>No se encontraron resultados.</p>
+    <p>No se encontraron resultados.</p>
 {% endif %}
 
 {% endblock %}

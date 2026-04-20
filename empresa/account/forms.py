@@ -27,6 +27,10 @@ class RegistroForm(UserCreationForm):
         self.fields['password1'].help_text = None
         self.fields['password2'].help_text = None
 
+
+        self.fields['dni'].label = "DNI (sin puntos)"
+        self.fields['fecha_nacimiento'].label = "Fecha nacimiento (YYYY-AA-MM)"
+
         self.fields['username'].label = "Usuario"
         self.fields['password1'].label = "Contraseña"
         self.fields['password2'].label = "Repetir contraseña"

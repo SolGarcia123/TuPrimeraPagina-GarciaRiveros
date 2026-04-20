@@ -4,6 +4,9 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import RegistroForm, ProfileForm
 from .models import Profile
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.decorators import login_required
 
 def register_view(request):
     mensaje_exito = None
@@ -25,8 +28,9 @@ def register_view(request):
 
             mensaje_exito = "Usted se ha registrado correctamente."
             form = RegistroForm()
+    
         else:
-            mensaje_error = "La contraseña no cumple con las condiciones."
+            mensaje_error = "Registro incorrecto. Ingrese los datos correctamente."
 
     else:
         form = RegistroForm()
@@ -79,3 +83,19 @@ def editar_perfil(request):
         form = ProfileForm(instance=profile)
 
     return render(request, 'account/editar_perfil.html', {'form': form})
+
+@login_required
+def cambiar_password(request):
+    if request.method == "POST":
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+            return redirect('password_change_done')
+    else:
+        form = PasswordChangeForm(request.user)
+
+    return render(request, 'account/cambiar_password.html', {'form': form})
+
+def password_change_done(request):
+    return render(request, 'account/password_change_done.html')

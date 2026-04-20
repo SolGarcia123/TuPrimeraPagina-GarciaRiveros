@@ -45,13 +45,92 @@
     </a>
 </div>
 
+<div style="margin-top:10px;">
+    <a href="{% url 'reporte_proveedores' %}?nombre={{ request.GET.nombre }}" style="
+        background-color:#8B5CF6;
+        color:white;
+        padding:10px 20px;
+        border-radius:10px;
+        text-decoration:none;
+        display:inline-block;
+    ">
+        REPORTE
+    </a>
+</div>
 <hr>
 
-<ul style="margin-top: 20px;">
-    {% for p in proveedores %}
-        <li>{{ p.nombre }} - {{ p.email }}</li>
-    {% endfor %}
-</ul>
+{% if proveedores %}
+
+<div style="width:100%; overflow-x:auto;">
+
+<table border="1" style="
+    width:100%;
+    text-align:center;
+    border-collapse: collapse;
+">
+
+    <thead style="background-color:#ddd;">
+        <tr>
+            <th style="padding:12px;">Nombre</th>
+            <th style="padding:12px;">Teléfono</th>
+            <th style="padding:12px;">Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for p in proveedores %}
+        <tr>
+            <td style="padding:10px;">{{ p.nombre }}</td>
+            <td style="padding:10px;">{{ p.telefono }}</td>
+
+            <td style="padding:10px;">
+
+                <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+                    <a href="{% url 'proveedor_detail' p.id %}?nombre={{ request.GET.nombre }}" style="
+                        background-color: #8B5CF6;
+                        color: white;
+                        padding: 8px 12px;
+                        border-radius: 8px;
+                        text-decoration: none;
+                        font-size: 13px;
+                    ">
+                        VER DETALLES
+                    </a>
+
+                    <a href="{% url 'proveedor_update' p.id %}?nombre={{ request.GET.nombre }}" style="
+                        background-color: #8B5CF6;
+                        color: white;
+                        padding: 8px 12px;
+                        border-radius: 8px;
+                        text-decoration: none;
+                        font-size: 13px;
+                    ">
+                        EDITAR
+                    </a>
+                        <a href="{% url 'proveedor_confirm_delete' p.id %}?nombre={{ request.GET.nombre }}" style="
+                        background-color: #8B5CF6;
+                        color: white;
+                        padding: 8px 12px;
+                        border-radius: 8px;
+                        text-decoration: none;
+                        font-size: 13px;
+                    ">
+                        ELIMINAR
+                    </a>
+
+                </div>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+</div>
+
+{% elif request.GET.nombre %}
+    <p>No se encontraron proveedores con ese nombre.</p>
+{% endif %}
 
 {% endblock %}
-

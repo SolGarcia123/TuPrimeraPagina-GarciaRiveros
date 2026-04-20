@@ -1,0 +1,71 @@
+{% extends "ventas/base.html" %}
+
+{% block contenido %}
+
+<h2>📊 REPORTE DE PRODUCTOS</h2>
+
+<div style="width:100%; overflow-x:auto;">
+
+<table border="1" style="
+    width:800px;
+    text-align:center;
+    border-collapse: collapse;
+    table-layout: fixed;
+">
+
+    <thead style="background-color:#ddd;">
+        <tr>
+            <th style="width:6%; padding:12px;">Código</th>
+            <th style="width:18%; padding:12px;">Nombre</th>
+            <th style="width:12%; padding:12px;">Color</th>
+            <th style="width:12%; padding:12px;">Descripción</th>
+            <th style="width:10%; padding:12px;">Precio</th>
+            <th style="width:12%; padding:12px;">Fecha</th>
+            <th style="width:10%; padding:12px;">Imagen</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for producto in productos %}
+        <tr>
+            <td style="padding:10px;">{{ producto.codigo }}</td>
+            <td style="padding:10px;">{{ producto.nombre }}</td>
+            <td style="padding:10px;">{{ producto.color }}</td>
+            <td style="padding:10px;">{{ producto.descripcion }}</td>
+            <td style="padding:10px;">${{ producto.precio }}</td>
+            <td style="padding:10px;">{{ producto.fecha }}</td>
+
+            <td style="padding:10px;">
+                {% if producto.imagen %}
+                    <img src="{{ producto.imagen.url }}" width="80">
+                {% else %}
+                    Sin imagen
+                {% endif %}
+            </td>
+        </tr>
+
+        {% empty %}
+        <tr>
+            <td colspan="7" style="padding:15px;">
+                No hay productos
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+</div>
+
+<br>
+<a href="{% url 'buscar_producto' %}?nombre={{ nombre }}"  style="
+    background-color: #8B5CF6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+">
+    VOLVER
+</a>
+
+{% endblock %}

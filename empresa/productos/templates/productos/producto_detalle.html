@@ -5,7 +5,9 @@
 <h2 style="text-align:center; color:#8B5CF6;">
     {{ object.nombre }}
 </h2>
-
+<p><strong>Fecha:</strong> {{ object.fecha}}</p>
+<p><strong>Codigo:</strong> {{ object.codigo}}</p>
+<p><strong>Nombre:</strong> {{ object.nombre}}</p>
 <p><strong>Color:</strong> {{ object.color }}</p>
 <p><strong>Precio:</strong> ${{ object.precio }}</p>
 <p><strong>Descripción:</strong><br> {{ object.descripcion }}</p>
@@ -21,10 +23,8 @@
 
 <br>
 
-<div style="display: flex; gap: 10px; justify-content: center;">
-
-
-    <a href="{% url 'productos' %}" style="
+<div style="display: flex; gap: 10px; justify-content: left;">
+    <a href="{% url 'buscar_producto' %}?nombre={{ nombre }}" style="
         background-color: #8B5CF6;
         color: white;
         padding: 8px 12px;
@@ -33,19 +33,7 @@
         display: inline-block;
         font-size: 14px;
     ">
-        Ver más detalles
-    </a>
-
-    <a href="{% url 'buscar_producto' %}" style="
-        background-color: #8B5CF6;
-        color: white;
-        padding: 8px 12px;
-        border-radius: 5px;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 14px;
-    ">
-        Volver
+        VOLVER
     </a>
 
 </div>

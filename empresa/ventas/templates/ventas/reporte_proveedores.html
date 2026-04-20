@@ -1,0 +1,44 @@
+{% extends "ventas/base.html" %}
+
+{% block contenido %}
+
+<h2>📊 REPORTE DE PROVEEDORES</h2>
+
+<table border="1" style="
+    width:100%;
+    text-align:center;
+    border-collapse:collapse;
+">
+
+    <thead style="background:#ddd;">
+        <tr>
+            <th style="padding:4px;">Nombre</th>
+            <th style="padding:4px;">Teléfono</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for p in proveedores %}
+        <tr>
+            <td style="padding:10px;">{{ p.nombre }}</td>
+            <td style="padding:10px;">{{ p.telefono }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+<br>
+
+
+<a href="{% url 'buscar_proveedor' %}?nombre={{ nombre }}" style="
+background:#8B5CF6;
+color:white;
+padding:10px 20px;
+border-radius:10px;
+text-decoration:none;
+">
+VOLVER
+</a>
+
+{% endblock %}

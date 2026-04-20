@@ -1,0 +1,39 @@
+{% extends "ventas/base.html" %}
+
+{% block contenido %}
+
+<h2 style="margin-bottom: 20px;">👤 DETALLE DEL PROVEEDOR</h2>
+
+<div style="
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+"> 
+
+
+    <p><strong>Nombre:</strong> {{ proveedor.nombre }}</p>
+    <p><strong>Telefono:</strong> {{ proveedor.telefono}}</p>
+
+</div>
+
+<div style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
+
+    
+    <a href="{% url 'buscar_proveedor' %}?nombre={{ nombre }}" style="
+        background-color: #8B5CF6;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: normal;
+        font-size: 14px;
+    ">
+        VOLVER
+    </a>
+
+</div>
+
+{% endblock %}
