@@ -4,17 +4,21 @@
 La Empresa Rombo Pisos es una entidad comercial que se dedica a la reventa de baldosas.
 
 
-## Descripción del projecto
+## Descripción del proyecto
 Este proyecto es una página web desarrollada en Django que permite gestionar proveedores, clientes y baldosas.
+
+
+## VIDEO
+El video se podrá visualizar desde el siguiente link:
+https://drive.google.com/drive/folders/1VKZpER1AzVM4cJyLaVICgOzhld-wjMap?usp=sharing
 
 ## Funcionalidades
 
-- Registro de usuario(incluye log in, modificación del perfil y log out)
-- Añadir proveedores (persona/empresa que venden el producto final)
-- Añadir clientes (personas que compraron el producto)
-- Añadir nuevos diseños de baldosas
-- Buscar clientes
-- Buscar diseños de baldosas existentes
+- Registro de usuario (incluye log in, modificación de datos, modificación de password y log out)
+- Proveedores (crear, buscar, editar datos, eliminar y vista de reporte)
+- Clientes (crear, buscar, editar datos, eliminar y vista de reporte)
+- Diseños de baldosas (crear, buscar, editar datos, eliminar y vista de reporte)
+
 
 ## Pasos para acceder a la página web
 
@@ -48,24 +52,42 @@ python manage.py runserver
 
 http://127.0.0.1:8000
 
-7. Usar el menú superior para probar las funcionalidades:
-- Cargar datos (clientes, proveedores, baldosas)
-- Buscar información (clientes, baldosas)
+7. Usar el menú superior para probar las funcionalidades.
+
+## Prueba Diseños (Modelo principal)
+1. Ir a la opción "Diseños"->"Añadir Diseño". Ingresar los características del diseño.
+2. Ir a la opción "Diseños"->"Buscar Diseño". Buscar por el nombre del diseño.
+3. Ir a la opción "Diseños"->"Buscar Diseño". Buscar por el nombre del diseño y presionar el botón "Buscar" y luego, "Editar".
+4. Ir a la opción "Diseños"->"Buscar Diseño". Buscar por el nombre del diseño y presionar el botón "Buscar" y luego, "Eliminar".
+5. Ir a la opción "Diseños"->"Buscar Diseño". Buscar por el nombre del diseño y presionar el botón "Buscar" y luego, "Ver más detalles".
+6. Ir a la opción "Diseños"->"Buscar Diseño". Buscar por el nombre del diseño y presionar el botón "Buscar" y luego, "Reporte".
 
 ## Prueba Clientes
-1. Ir a la opción "Cliente" --> Ingresar los datos del cliente --> Por ejemplo: Maximiliano maxi@gmail.com
-2. Ir a la opción "Buscar Cliente" --> Buscar por el nombre del cliente --> Por ejemplo: Maximiliano
+1. Ir a la opción "Clientes"->"Añadir cliente". Ingresar los datos del cliente.
+2. Ir a la opción "Clientes"->"Buscar Cliente". Buscar por el nombre del cliente.
+3. Ir a la opción "Clientes"->"Buscar Cliente". Buscar por el nombre del cliente y presionar el botón "Buscar" y luego, "Editar".
+4. Ir a la opción "Clientes"->"Buscar Cliente". Buscar por el nombre del cliente y presionar el botón "Buscar" y luego, "Eliminar".
+5. Ir a la opción "Clientes"->"Buscar Cliente". Buscar por el nombre del cliente y presionar el botón "Buscar" y luego, "Ver más detalles".
+6. Ir a la opción "Diseños"->"Buscar Cliente". Buscar por el nombre del cliente y presionar el botón "Buscar" y luego, "Reporte".
 
 ## Prueba Proveedores
-1. Ir a la opción "Proveedor" --> Ingresar los datos del proveedor --> Por ejemplo: Proveedor MAX 1156986236
-2. Ingresar un modelo de baldosa y asociarle un proveedor --> Por ejemplo: #001 Negro 1200 Proveedor MAX
+1. Ir a la opción "Proveedores"->"Añadir Proveedor". Ingresar los datos del proveedor.
+2. Ir a la opción "Proveedores"->"Buscar Proveedor". Buscar por el nombre del proveedor.
+3. Ir a la opción "Proveedores"->"Buscar Proveedor". Buscar por el nombre del proveedor y presionar el botón "Buscar" y luego, "Editar".
+4. Ir a la opción "Proveedores"->"Buscar Proveedor". Buscar por el nombre del proveedor y presionar el botón "Buscar" y luego, "Eliminar".
+5. Ir a la opción "Proveedores"->"Buscar Proveedor". Buscar por el nombre del proveedor y presionar el botón "Buscar" y luego, "Ver más detalles".
+6. Ir a la opción "Proveedores"->"Buscar Proveedor". Buscar por el nombre del proveedor y presionar el botón "Buscar" y luego, "Reporte".
 
-## Prueba Baldosas
-1. Ir a la opción "Baldosa" --> Ingresar los datos del nuevo modelo de baldosa --> Por ejemplo: #001 Negro 1200 Proveedor MAX
-2. Ir a la opción "Buscar Baldosa" --> Buscar por el codigo de la baldosa --> Por ejemplo: #001
+## Prueba Usuario
+1. Ir a la opción "Inicio". Página Principal, contacto y redes sociales.
+2. Ir a la opción "Inicio"-> "About Us". Información de la empresa y desarrollador de la página web.
+3. Ir a la opción "Inicio"->"Registrarse". Crear un usuario.
+4. Ir a la opción "Inicio"->"Iniciar Sesión". Realizar login.
+5. Ir a la opción "Inicio"->"Iniciar Sesión" -> "Perfil". Cambiar datos del perfil.
+6. Ir a la opción "Inicio"->"Iniciar Sesión" -> "Perfil"->"Cambiar Contraseña". Cambiar contraseña del perfil.
+7. Ir a la opción "Inicio"->"Cerrar Sesión". Realizar logout.
 
 ## Tecnologías usadas
-
 - Python
 - Django
 - HTML + CSS
