@@ -59,7 +59,7 @@ http://127.0.0.1:8000
 2. Ir a la opción "Diseños"->"Buscar Diseño". Buscar por el nombre del diseño.
 3. Ir a la opción "Diseños"->"Buscar Diseño". Buscar por el nombre del diseño y presionar el botón "Buscar" y luego, "Editar".
 4. Ir a la opción "Diseños"->"Buscar Diseño". Buscar por el nombre del diseño y presionar el botón "Buscar" y luego, "Eliminar".
-5. Ir a la opción "Diseños"->"Buscar Diseño". Buscar por el nombre del diseño y presionar el botón "Buscar" y luego, "Ver más detalles".
+5. Ir a la opción "Diseños"->"Buscar Diseño". Buscar por el nombre del diseño y presionar el botón "Buscar" y luego, "Ver detalles".
 6. Ir a la opción "Diseños"->"Buscar Diseño". Buscar por el nombre del diseño y presionar el botón "Buscar" y luego, "Reporte".
 
 ## Prueba Clientes
@@ -67,7 +67,7 @@ http://127.0.0.1:8000
 2. Ir a la opción "Clientes"->"Buscar Cliente". Buscar por el nombre del cliente.
 3. Ir a la opción "Clientes"->"Buscar Cliente". Buscar por el nombre del cliente y presionar el botón "Buscar" y luego, "Editar".
 4. Ir a la opción "Clientes"->"Buscar Cliente". Buscar por el nombre del cliente y presionar el botón "Buscar" y luego, "Eliminar".
-5. Ir a la opción "Clientes"->"Buscar Cliente". Buscar por el nombre del cliente y presionar el botón "Buscar" y luego, "Ver más detalles".
+5. Ir a la opción "Clientes"->"Buscar Cliente". Buscar por el nombre del cliente y presionar el botón "Buscar" y luego, "Ver detalles".
 6. Ir a la opción "Diseños"->"Buscar Cliente". Buscar por el nombre del cliente y presionar el botón "Buscar" y luego, "Reporte".
 
 ## Prueba Proveedores
@@ -75,7 +75,7 @@ http://127.0.0.1:8000
 2. Ir a la opción "Proveedores"->"Buscar Proveedor". Buscar por el nombre del proveedor.
 3. Ir a la opción "Proveedores"->"Buscar Proveedor". Buscar por el nombre del proveedor y presionar el botón "Buscar" y luego, "Editar".
 4. Ir a la opción "Proveedores"->"Buscar Proveedor". Buscar por el nombre del proveedor y presionar el botón "Buscar" y luego, "Eliminar".
-5. Ir a la opción "Proveedores"->"Buscar Proveedor". Buscar por el nombre del proveedor y presionar el botón "Buscar" y luego, "Ver más detalles".
+5. Ir a la opción "Proveedores"->"Buscar Proveedor". Buscar por el nombre del proveedor y presionar el botón "Buscar" y luego, "Ver detalles".
 6. Ir a la opción "Proveedores"->"Buscar Proveedor". Buscar por el nombre del proveedor y presionar el botón "Buscar" y luego, "Reporte".
 
 ## Prueba Usuario
